@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Select your cleaning package from Spotless Squad Cleaning Services.">
+    <meta name="keywords" content="cleaning packages, Spotless Squad, professional cleaning, package selection">
+    <link rel="icon" href="images/ss.jpeg">
+    <title>Spotless Squad Cleaning Services | Packages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        body:hover {
+            background-color: #f0f0f0; /* Slight hover effect for the background */
+        }
+
+        nav {
+            background: linear-gradient(rgba(0, 0, 0, 0.885), rgba(149, 0, 255, 0.438));
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: linear-gradient(rgba(0, 0, 0, 0.885), rgba(149, 0, 255, 0.438));
+            color: #fff;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #FFC107;
+            transform: scale(1.1);
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(rgba(149, 0, 255, 0.438), rgba(0, 47, 255, 0.56));
+                padding: 10px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(rgba(149, 0, 255, 0.438), rgba(0, 47, 255, 0.56)), url('images/tekema.jpeg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            height: 300px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .package-section {
+            background: linear-gradient(to bottom, #EAF6F6, #DEF3F3);
+            color: #034748;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .package-section:hover {
+            background: linear-gradient(to bottom, #DEF3F3, #CBECEC);
+            transform: scale(1.02);
+        }
+
+        .package {
+            background: #F0FFF0;
+            color: #014D4E;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+            margin: 20px;
+        }
+
+        .package:hover {
+            transform: translateY(-10px);
+            background: #D1F7D1;
+        }
+
+        .package img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .package h3 {
+            margin: 10px 0;
+        }
+
+        .package p {
+            margin: 10px 0;
+        }
+
+        .package button {
+            background: #e506bc;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .package button:hover {
+            background: #a80089;
+            transform: translateY(-5px);
+        }
+
+        .packages {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer {
+            background: linear-gradient(rgba(62, 0, 106, 0.974), rgba(0, 32, 172, 0.806));
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer .quick-links {
+            margin-bottom: 20px;
+        }
+
+        .footer .social-media a {
+            color: #FFC107;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer .social-media a:hover {
+            color: #FFA000;
+            transform: scale(1.1);
+        }
+
+        /* WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-widget img {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-widget img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Make it Follow Scrolling */
+        .whatsapp-widget {
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        /* Keyframes for smooth entrance */
+        @keyframes slideIn {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Spotless Squad</h1>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Our Services</a></li>
+            <li><a href="package.html">Packages</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Select Your Cleaning Package</h1>
+            <p>Choose from our variety of cleaning packages tailored to meet your needs.</p>
+        </div>
+    </header>
+
+    <section class="package-section" id="packages">
+        <h2>Our Packages</h2>
+        <div class="packages">
+            <div class="package">
+                <img src="images/package1.jpeg" alt="Basic Package">
+                <h3>Basic Package</h3>
+                <p>Includes basic cleaning services for small spaces.</p>
+                <button onclick="selectPackage('Basic Package', 50, 'images/package1.jpeg')">Select</button>
+            </div>
+            <div class="package">
+                <img src="images/package2.jpeg" alt="Standard Package">
+                <h3>Standard Package</h3>
+                <p>Includes standard cleaning services for medium-sized spaces.</p>
+                <button onclick="selectPackage('Standard Package', 100, 'images/package2.jpeg')">Select</button>
+            </div>
+            <div class="package">
+                <img src="images/package3.jpeg" alt="Premium Package">
+                <h3>Premium Package</h3>
+                <p>Includes premium cleaning services for large spaces.</p>
+                <button onclick="selectPackage('Premium Package', 150, 'images/package3.jpeg')">Select</button>
+            </div>
+            <div class="package">
+                <img src="images/package4.jpeg" alt="Deluxe Package">
+                <h3>Deluxe Package</h3>
+                <p>Includes deluxe cleaning services for extra-large spaces.</p>
+                <button onclick="selectPackage('Deluxe Package', 200, 'images/package4.jpeg')">Select</button>
+            </div>
+            <div class="package">
+                <img src="images/package5.jpeg" alt="Ultimate Package">
+                <h3>Ultimate Package</h3>
+                <p>Includes ultimate cleaning services for very large spaces.</p>
+                <button onclick="selectPackage('Ultimate Package', 250, 'images/package5.jpeg')">Select</button>
+            </div>
+        </div>
+        <button id="proceed-button" style="display: none;">Proceed to Payment</button>
+    </section>
+
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/+2349071398495" target="_blank">
+            <img src="images/—Pngtree—whatsapp icon whatsapp logo free_5990837.png" alt="Chat with us on WhatsApp">
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="images/sslo.png" alt="Spotless Squad" width="300">
+        <div class="quick-links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Our Services</a></li>
+                <li><a href="contact.html">Reach Us</a></li>
+            </ul>
+        </div>
+        <p>No 17 Aribogha street off refinery road effurun 09018086509</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle navigation menu
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Function to select a package and save to local storage
+        let selectedPackages = JSON.parse(localStorage.getItem('selectedPackages')) || [];
+
+        function selectPackage(packageName, price, imageSrc) {
+            const packageDetails = {
+                name: packageName,
+                price: price,
+                image: imageSrc
+            };
+            selectedPackages.push(packageDetails);
+            localStorage.setItem('selectedPackages', JSON.stringify(selectedPackages));
+            alert(`${packageName} selected.`);
+            document.getElementById('proceed-button').style.display = 'block';
+        }
+
+        // Proceed to payment
+        document.getElementById('proceed-button').addEventListener('click', () => {
+            window.location.href = 'https://wa.me/+2349071398495';
+        });
+    </script>
+</body>
+</html>

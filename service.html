@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Diamond Shine</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+      /* General Styles */
+      body {
+        font-family: 'Open Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        line-height: 1.6;
+        background: linear-gradient(180deg, #f0f4ff, #ffffff);
+        color: #333;
+    }
+
+
+body:hover {
+    background-color: #f0f0f0; /* Slight hover effect for the background */
+}
+
+    /* Navbar */
+    nav {
+        background:linear-gradient(rgba(83, 0, 143, 0.733), rgba(0, 23, 124, 0.796));
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    nav .logo img {
+        height: 50px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color:  #FFA500;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: none;
+            flex-direction: column;
+            background: #012b6ba8;
+            position: absolute;
+            right: 0;
+            top: 60px;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        nav ul.active {
+            display: flex;
+        }
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(rgba(93, 0, 160, 0.438), rgba(0, 47, 255, 0.56)), url('images/tekema.jpeg') center/cover no-repeat;
+            color: #fff;
+        padding: 100px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+
+    /* Services Section */
+    .services-section {
+        padding: 50px 20px;
+        text-align: center;
+        background: #f4f4f4;
+    }
+
+    .services-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #012C6B;
+    }
+
+    .service-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .service-item {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-item img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .service-item h3 {
+        margin: 15px 0 10px;
+        color: #012C6B;
+        font-size: 1.5rem;
+    }
+
+    .service-item p {
+        color: #666;
+        font-size: 1rem;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        padding: 50px 20px;
+        background: linear-gradient(180deg, #012C6B,rgb(69, 0, 119));
+        color: #fff;
+        text-align: center;
+    }
+
+    .testimonials h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .testimonial {
+        max-width: 600px;
+        margin: 20px auto;
+        font-size: 1.1rem;
+        font-style: italic;
+        border-left: 5px solid #FFA500;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Call-to-Action Section */
+    .cta {
+        background: linear-gradient(90deg, #FFA500, #FF8400);
+        color: #fff;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .cta a {
+        background: #012C6B;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .cta a:hover {
+        background: #011c46;
+    }
+
+    /* Footer */
+    footer {
+        background:linear-gradient(rgba(75, 0, 128, 0.895), rgb(0, 20, 110));
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    footer ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    footer ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    footer ul li a {
+        color: #FFA500;
+        text-decoration: none;
+    }
+
+    footer ul li a:hover {
+        text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="sslo.png" alt="Spotless Squad">
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Our Services</a></li>
+            <li><a href="package.html">Package Payment</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Our Services</h1>
+        <p>Experience premium cleaning and fumigation services tailored for your needs.</p>
+    </header>
+
+    <section class="services-section">
+        <h2>What We Offer</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <img src="images/cleaning.jpg" alt="Domestic Cleaning">
+                <h3>Domestic Cleaning</h3>
+                <p>We provide efficient and reliable domestic cleaning services to keep your home spotless.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/dreamstime_s_212475288-1.jpg" alt="Commercial Cleaning">
+                <h3>Commercial Cleaning</h3>
+                <p>Our professional cleaning ensures a neat and welcoming workplace.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/Construction-Blog-3-1080x675.jpg" alt="Post-Construction Cleaning">
+                <h3>Post-Construction Cleaning</h3>
+                <p>We handle the mess after renovations and construction projects.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/iStock-1341381731.jpg" alt="Fumigation Services">
+                <h3>Fumigation Services</h3>
+                <p>Our fumigation service ensures your space is pest-free and safe.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <p class="testimonial">"Spoptless Squad transformed our office into a sparkling clean workspace. Highly recommended!"</p>
+        <p class="testimonial">"Efficient, professional, and thorough. The best cleaning service we've ever used!"</p>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Experience the Best?</h2>
+        <a href="contact.html">Contact Us Today</a>
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+        <p>&copy; 2024 Diamond Shine. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+        
+    </script>
+</body>
+</html>
